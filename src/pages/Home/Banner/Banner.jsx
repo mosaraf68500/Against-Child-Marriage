@@ -3,6 +3,7 @@ import banner from "../../../assets/child_marriage.jpg";
 import { Link } from "react-router";
 import { ArrowRight, BarChart3, BookOpen, Users } from "lucide-react";
 import hero from "../../../assets/hero.jpg"
+import GoalAndDescribtion from "../../../components/GoalAndDescribtion.jsx/GoalAndDescribtion";
 
 const Banner = () => {
   return (
@@ -102,6 +103,10 @@ const Banner = () => {
             </div>
           </div>
         </section>
+
+        <div>
+            <GoalAndDescribtion></GoalAndDescribtion>
+        </div>
 
         {/* Quick Stats Section */}
         <section className="py-12 sm:py-16 bg-white">
