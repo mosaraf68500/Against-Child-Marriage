@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className="flex justify-center items-center gap-2">
           <img className="w-[35px] text-[#22A3D1] rounded-full" src={logo} alt="" />
           <Link to="/" className="text-md lg:text-xl text-[#22A3D1] font-bold ">
-            Against Child Marriage
+           VACM
           </Link>
         </div>
       </div>

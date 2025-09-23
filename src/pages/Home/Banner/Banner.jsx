@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../../assets/child_marriage.jpg";
+// import banner from "../../../assets/child_marriage.jpg";
 import { Link } from "react-router";
 import { ArrowRight, BarChart3, BookOpen, Users } from "lucide-react";
 import hero from "../../../assets/hero.jpg"
@@ -31,17 +31,21 @@ const Banner = () => {
             </div>
           </div>
           {/* Image Content */}
-          <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-            <div className="relative w-full h-64 sm:h-80 lg:h-96 overflow-hidden rounded-xl shadow-xl">
-              <img
-                src={banner}
-                alt="Against Child Marriage"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-          </div>
+         <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
+  <div className="relative w-full h-64 sm:h-80 lg:h-96 overflow-hidden rounded-xl shadow-xl">
+    <iframe
+      className="w-full h-full rounded-xl"
+      src="https://www.youtube.com/embed/yV4Umh3zFPY?si=TVotZkmpCnZyIIMQ"
+      title="Against Child Marriage"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+      loading="lazy"
+    ></iframe>
+    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+  </div>
+</div>
+
         </div>
       </div>
 
@@ -72,17 +76,17 @@ const Banner = () => {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="grid grid-cols-2 justify-center items-center  gap-4">
                   <Link
-                    to="/about"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                    to="/"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-[#22A3D1] text-white font-semibold rounded-lg hover:bg-[#1081ab] transition-colors"
                   >
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                   <Link
                     to="/resources"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                    className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#22A3D1] text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     Get Help
                   </Link>
@@ -150,7 +154,7 @@ const Banner = () => {
 
             <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
               {/* Data & Facts Card */}
-              <Link to="/data-facts" className="group">
+              <Link to="/about" className="group">
                 <div className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 group-hover:border-blue-200 h-full">
                   <div className="flex items-center justify-center w-12 h-12 bg-blue-50 rounded-lg mb-6 group-hover:bg-blue-100 transition-colors">
                     <BarChart3 className="h-6 w-6 text-blue-600" />
@@ -170,7 +174,7 @@ const Banner = () => {
               </Link>
 
               {/* Legal Timeline Card */}
-              <Link to="/legal-timeline" className="group">
+              <Link to="/blogs" className="group">
                 <div className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 group-hover:border-blue-200 h-full">
                   <div className="flex items-center justify-center w-12 h-12 bg-green-50 rounded-lg mb-6 group-hover:bg-green-100 transition-colors">
                     <BookOpen className="h-6 w-6 text-green-600" />
@@ -226,7 +230,7 @@ const Banner = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-[#22A3D1] text-white font-semibold rounded-lg hover:bg-[#127ca3] transition-colors"
               >
                 Learn About the Issue
               </Link>

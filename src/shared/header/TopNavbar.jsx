@@ -11,7 +11,7 @@ const TopNavbar = () => {
         <div className="hidden md:flex items-center gap-2 text-sm">
           <IoIosStar className="text-[#22A3D1]" />
           <span>
-            Welcome to <span className="text-[#22A3D1]">Against Child Marriage</span> - Protecting Childhood, Promoting Education.
+            Welcome to <span className="text-[#22A3D1]">Voices against Child Marrage(VACM)</span> - Protecting Childhood, Promoting Education.
 
             
           </span>

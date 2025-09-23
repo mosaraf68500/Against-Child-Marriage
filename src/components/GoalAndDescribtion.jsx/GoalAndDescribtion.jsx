@@ -9,9 +9,9 @@ const GoalAndDescription = () => {
         {/* Left Section: Goal, Overview, and What We Do */}
         <div className="lg:col-span-2 space-y-6">
           {/* Goal Card */}
-          <div className=" p-6 rounded-lg shadow-lg transition-transform duration-300 hover:shadow-xl">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Goal</h1>
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+          <div className=" p-6 bg-[#22A3D1] text-white rounded-lg shadow-lg transition-transform duration-300 hover:shadow-xl">
+            <h1 className="text-2xl sm:text-3xl font-bold  mb-4">Goal</h1>
+            <p className=" leading-relaxed text-sm sm:text-base">
               Girls get to decide if, when, and whom they marry. Married girls lead
               healthy, empowered, and self-determined lives.
             </p>

@@ -8,36 +8,36 @@ const Contact = () => {
     <div>
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative text-center text-white z-10 px-4 sm:px-6"
-        >
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-            Contact Us
-          </h1>
-          <div className="flex justify-center items-center space-x-2 text-sm sm:text-base">
-            <Link
-              to="/"
-              className="hover:text-[#0AB99D] transition-colors duration-300"
-            >
-              Home
-            </Link>
-            <span className="text-gray-300">||</span>
-            <Link to="" className="text-[#0AB99D] font-semibold">
-              Contact
-            </Link>
-          </div>
-        </motion.div>
-      </section>
+             className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
+             style={{
+               backgroundImage: "url(https://i.ibb.co.com/9k9skV6Q/school-children-group-girls-boy-students-uniform-over-bl-black-background-97032148.webp) ",
+             }}
+           >
+             {/* <a href="https://ibb.co.com/zhdLYdzv"><img src="https://i.ibb.co.com/zhdLYdzv/dsc00670-480.jpg" alt="dsc00670-480" border="0"></a> */}
+             <div className="absolute inset-0 bg-black/60"></div>
+             <motion.div
+               initial={{ opacity: 0, y: -50 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8 }}
+               className="relative text-center text-white z-10 px-4 sm:px-6"
+             >
+               <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                 About Our Mission
+               </h1>
+               <div className="flex justify-center items-center space-x-2 text-sm sm:text-base">
+                 <Link
+                   to="/"
+                   className="hover:text-[#0AB99D] transition-colors duration-300"
+                 >
+                   Home
+                 </Link>
+                 <span className="text-gray-300">||</span>
+                 <Link to="" className="text-[#0AB99D] font-semibold">
+                   About Us
+                 </Link>
+               </div>
+             </motion.div>
+           </section>
 
       <section>
         <div className="bg-amber-50 py-12 sm:py-16 px-4 sm:px-6">

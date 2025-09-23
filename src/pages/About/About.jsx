@@ -75,7 +75,7 @@ const About = () => {
       <section
         className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
         style={{
-          backgroundImage: "url(https://i.ibb.co.com/zhdLYdzv/dsc00670-480.jpg) ",
+          backgroundImage: "url(https://i.ibb.co.com/9k9skV6Q/school-children-group-girls-boy-students-uniform-over-bl-black-background-97032148.webp) ",
         }}
       >
         {/* <a href="https://ibb.co.com/zhdLYdzv"><img src="https://i.ibb.co.com/zhdLYdzv/dsc00670-480.jpg" alt="dsc00670-480" border="0"></a> */}
@@ -381,7 +381,7 @@ const About = () => {
                 placeholder="Enter your email"
                 className="px-4 py-3 sm:py-4 bg-white rounded-l-lg w-full text-gray-900 focus:outline-none text-sm sm:text-base"
               />
-              <button className="px-4 sm:px-6 py-3 sm:py-4 bg-black text-white rounded-r-lg hover:bg-gray-800 transition-colors duration-300 text-sm sm:text-base">
+              <button className="px-4 text-sm sm:px-6 py-3 sm:py-4 bg-black text-white rounded-r-lg hover:bg-gray-800 transition-colors duration-300 text-sm sm:text-base">
                 Subscribe Now
               </button>
             </div>
