@@ -109,7 +109,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 ">
       <Helmet>
         <title>Blogs - AMR Voices Against Child Marriage</title>
         <meta
@@ -124,7 +124,7 @@ const Blogs = () => {
 
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-center bg-no-repeat h-[40vh] sm:h-[50vh] md:h-[60vh] flex items-center justify-center"
+        className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
         style={{
           backgroundImage:
             "url(https://i.ibb.co.com/9k9skV6Q/school-children-group-girls-boy-students-uniform-over-bl-black-background-97032148.webp)",

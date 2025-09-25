@@ -134,7 +134,7 @@ export default function ResourcesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 ">
       <Helmet>
         <title>Resources - AMR Voices Against Child Marriage</title>
         <meta
