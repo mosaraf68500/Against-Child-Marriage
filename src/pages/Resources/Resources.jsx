@@ -2,6 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin, ExternalLink, Heart, Shield, Users, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet";
 
 export default function ResourcesPage() {
   const emergencyHotlines = [
@@ -58,7 +59,7 @@ export default function ResourcesPage() {
       email: "info.bangladesh@savethechildren.org",
       website: "www.savethechildren.org.bd",
       description:
-        "Working to ensure every child has the right to survival, protection, development and participation.",
+        "Working to ensure every child has the right to survival, protection, development, and participation.",
       icon: <Heart className="h-6 w-6" />,
     },
     {
@@ -114,51 +115,93 @@ export default function ResourcesPage() {
     },
   ];
 
+  // Animation variants for cards
+  const cardVariants = {
+    hidden: (index) => ({
+      opacity: 0,
+      x: index % 2 === 0 ? -50 : 50, // Odd: left, Even: right
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    },
+    exit: (index) => ({
+      opacity: 0,
+      x: index % 2 === 0 ? -50 : 50,
+      transition: { duration: 0.3 },
+    }),
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
+      <Helmet>
+        <title>Resources - AMR Voices Against Child Marriage</title>
+        <meta
+          name="description"
+          content="Access vital resources and organizations dedicated to combating child marriage in Bangladesh, including emergency hotlines, NGOs, and government services."
+        />
+        <meta
+          name="keywords"
+          content="child marriage, resources, Bangladesh, emergency hotlines, NGOs, government services, AMR Voices"
+        />
+      </Helmet>
+
       {/* Hero Section */}
-       <section
-              className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
-              style={{
-                backgroundImage: "url(https://i.ibb.co.com/9k9skV6Q/school-children-group-girls-boy-students-uniform-over-bl-black-background-97032148.webp) ",
-              }}
+      <section
+        className="relative bg-cover bg-center bg-no-repeat h-[40vh] sm:h-[50vh] md:h-[60vh] flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url(https://i.ibb.co.com/9k9skV6Q/school-children-group-girls-boy-students-uniform-over-bl-black-background-97032148.webp)",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70"></div>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative text-center text-white z-10 px-4 sm:px-6"
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+            Resources Against Child Marriage
+          </h1>
+          <div className="flex justify-center items-center space-x-4 text-sm sm:text-base">
+            <Link
+              to="/"
+              className="text-white hover:text-teal-400 transition-colors duration-300"
+              aria-label="Go to Home"
             >
-              {/* <a href="https://ibb.co.com/zhdLYdzv"><img src="https://i.ibb.co.com/zhdLYdzv/dsc00670-480.jpg" alt="dsc00670-480" border="0"></a> */}
-              <div className="absolute inset-0 bg-black/60"></div>
-              <motion.div
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative text-center text-white z-10 px-4 sm:px-6"
-              >
-                <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                  About Our Mission
-                </h1>
-                <div className="flex justify-center items-center space-x-2 text-sm sm:text-base">
-                  <Link
-                    to="/"
-                    className="hover:text-[#0AB99D] transition-colors duration-300"
-                  >
-                    Home
-                  </Link>
-                  <span className="text-gray-300">||</span>
-                  <Link to="" className="text-[#0AB99D] font-semibold">
-                    About Us
-                  </Link>
-                </div>
-              </motion.div>
-            </section>
+              Home
+            </Link>
+            <span className="text-gray-300">||</span>
+            <Link
+              to="/resources"
+              className="text-teal-400 font-semibold"
+              aria-label="Resources"
+            >
+              Resources
+            </Link>
+          </div>
+        </motion.div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Resources & Support</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Resources & Support
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Discover vital resources and organizations dedicated to combating child marriage in Bangladesh.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Emergency Alert */}
+        {/* Emergency Assistance Section */}
         <section className="mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,7 +212,9 @@ export default function ResourcesPage() {
             <div className="flex items-start space-x-4">
               <Phone className="h-6 w-6 text-red-600 mt-1" />
               <div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-3">Emergency Assistance</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-3">
+                  Emergency Assistance
+                </h2>
                 <p className="text-gray-600 mb-4">
                   If you or someone is in immediate danger due to child marriage, contact these services promptly.
                 </p>
@@ -178,11 +223,13 @@ export default function ResourcesPage() {
                     {emergencyHotlines.map((hotline, index) => (
                       <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 20 }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                        className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-shadow"
+                        custom={index}
+                        variants={cardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        transition={{ delay: index * 0.1 }}
+                        className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
                       >
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="font-semibold text-gray-900">{hotline.name}</h3>
@@ -198,19 +245,28 @@ export default function ResourcesPage() {
           </motion.div>
         </section>
 
-        {/* NGOs and Organizations */}
+        {/* NGOs and Organizations Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">NGOs & Organizations</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-semibold text-gray-900 mb-8 text-center"
+          >
+            NGOs & Organizations
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <AnimatePresence>
               {ngos.map((ngo, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300"
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0 p-3 bg-teal-50 rounded-lg text-teal-600">{ngo.icon}</div>
@@ -229,7 +285,13 @@ export default function ResourcesPage() {
                         </div>
                         <div className="flex items-center space-x-2">
                           <ExternalLink className="h-4 w-4 text-gray-500" />
-                          <a href={`http://${ngo.website}`} target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">
+                          <a
+                            href={`https://${ngo.website}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-teal-600 hover:underline"
+                            aria-label={`Visit ${ngo.name} website`}
+                          >
                             {ngo.website}
                           </a>
                         </div>
@@ -242,19 +304,28 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Government Resources */}
+        {/* Government Resources Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">Government Resources</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-semibold text-gray-900 mb-8 text-center"
+          >
+            Government Resources
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <AnimatePresence>
               {governmentResources.map((resource, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300"
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
                   <p className="text-gray-600 text-sm mb-4">{resource.services}</p>
@@ -278,9 +349,16 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Additional Resources */}
+        {/* Additional Resources Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">Additional Resources</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-semibold text-gray-900 mb-8 text-center"
+          >
+            Additional Resources
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
               {[
@@ -302,11 +380,13 @@ export default function ResourcesPage() {
               ].map((resource, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300"
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
@@ -321,14 +401,21 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* How to Help */}
+        {/* How You Can Help Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">How You Can Help</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-semibold text-gray-900 mb-8 text-center"
+          >
+            How You Can Help
+          </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-50 rounded-lg p-8 shadow-md"
+            className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg p-8 shadow-md"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
@@ -357,7 +444,7 @@ export default function ResourcesPage() {
           </motion.div>
         </section>
 
-        {/* Disclaimer */}
+        {/* Disclaimer Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

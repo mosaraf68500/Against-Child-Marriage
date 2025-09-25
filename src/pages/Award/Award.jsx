@@ -2,10 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import awardImage from "../../assets/award.jpg"
 import { Award, Trophy, Star, Users, Heart, Globe, Mail } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const AwardPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+        <Helmet>
+        <title>Awards</title>
+      </Helmet>
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
@@ -340,16 +344,16 @@ const AwardPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="/donate"
+                href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="inline-flex items-center justify-center px-8 py-4 bg-teal-400 text-white font-semibold rounded-lg hover:bg-teal-500 transition-colors focus:ring-2  focus:outline-none"
                 aria-label="Donate to AMR Voices"
               >
                 Donate Now
               </motion.a>
               <motion.a
-                href="/volunteer"
+                href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none"
@@ -362,42 +366,7 @@ const AwardPage = () => {
         </section>
       </div>
 
-      {/* Footer Section */}
-      <footer className="bg-gray-800 py-8 mt-12">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <p className="text-gray-300 text-sm">
-            &copy; 2025 AMR Voices Against Child Marriage. All rights reserved.
-          </p>
-          <div className="flex justify-center gap-4 mt-4">
-            <a
-              href="/contact"
-              className="text-gray-300 hover:text-white transition-colors"
-              aria-label="Contact Us"
-            >
-              Contact Us
-            </a>
-            <a
-              href="/about"
-              className="text-gray-300 hover:text-white transition-colors"
-              aria-label="About"
-            >
-              About
-            </a>
-            <a
-              href="/resources"
-              className="text-gray-300 hover:text-white transition-colors"
-              aria-label="Resources"
-            >
-              Resources
-            </a>
-          </div>
-        </motion.div>
-      </footer>
+      
     </div>
   );
 };

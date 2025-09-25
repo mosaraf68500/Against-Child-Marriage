@@ -10,6 +10,7 @@ import {
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const programs = [
@@ -71,6 +72,9 @@ const About = () => {
 
   return (
     <div className="font-sans text-gray-800">
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"
