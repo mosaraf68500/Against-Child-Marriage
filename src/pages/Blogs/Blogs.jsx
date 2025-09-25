@@ -85,7 +85,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className=" bg-gray-50 ">
+    <div className="oi bg-gray-50 ">
       {/* Hero Section */}
        <section
               className="relative bg-cover bg-center bg-no-repeat h-[50vh] sm:h-[60vh] flex items-center justify-center"

@@ -6,6 +6,7 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Resources from "../pages/Resources/Resources";
 import Blogs from "../pages/Blogs/Blogs";
+import Award from "../pages/Award/Award";
 
 
 export const router = createBrowserRouter([
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path:"blogs",
         Component:Blogs
+      },
+      {
+        path:"award",
+        Component:Award
       }
      
     ],
