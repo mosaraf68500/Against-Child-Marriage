@@ -214,7 +214,7 @@ const Blogs = () => {
                     {card.description}
                   </p>
                   <Link
-                    to={`/blogs/${card.id}`}
+                    to="#"
                     className="mt-4 inline-block text-teal-600 hover:underline text-sm font-medium"
                     aria-label={`Read more about ${card.title}`}
                   >
